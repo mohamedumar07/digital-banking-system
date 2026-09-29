@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class FraudDetectionService {
     private static final String VERIFICATION_REQUIRED_TOPIC = "verification.required";
-    private static final String FRAUD_CHECK_CLEAN_EVENT = "fraud.check.clean";
+    private static final String FRAUD_CHECK_CLEAN_EVENT = "cc";
     private final KafkaTemplate<String, Object> kafkaTemplate;
     private final RedisTemplate<String, String> redisTemplate;
 

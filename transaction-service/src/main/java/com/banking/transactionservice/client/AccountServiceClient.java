@@ -1,6 +1,7 @@
 package com.banking.transactionservice.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,4 +13,7 @@ public interface AccountServiceClient {
 
     @PutMapping("/api/v1/accounts/{accountNumber}/deduct")
     String deductBalance(String accountNumber, BigDecimal amount);
+
+    @PutMapping("/{accountNumber}/credit")
+    public ResponseEntity<String> creditBalance(String accountNumber, BigDecimal amount);
 }
